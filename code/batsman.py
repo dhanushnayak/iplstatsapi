@@ -83,8 +83,8 @@ def get_strikes_on_team(player,limit=10,top=True,low=False):
     balls=bdf.groupby('bowling_team')['ball'].count()
     score = bdf.groupby('bowling_team')['batsman_runs'].sum()
     data_df = ((score/balls)*100)
-    if top: return data_df.sort_values(ascending=False).apply(lambda x: round(x,3)).iloc[:limit]
-    if low: return data_df.sort_values(ascending=True).apply(lambda x: round(x,3)).iloc[:limit]
+    if top: return data_df.sort_values(ascending=False).apply(lambda x: round(x,1)).iloc[:limit]
+    if low: return data_df.sort_values(ascending=True).apply(lambda x: round(x,1)).iloc[:limit]
     else: return data_df.apply(lambda x: round(x,3))
 
 def get_strikes_by_year(player,limit=10, top=True,low=False):
@@ -92,8 +92,8 @@ def get_strikes_by_year(player,limit=10, top=True,low=False):
     balls=bdf.groupby('year')['ball'].count()
     score = bdf.groupby('year')['batsman_runs'].sum()
     data_df = ((score/balls)*100)
-    if top: return data_df.sort_values(ascending=False).apply(lambda x: round(x,3)).iloc[:limit]
-    if low: return data_df.sort_values(ascending=True).apply(lambda x: round(x,3)).iloc[:limit]
+    if top: return data_df.sort_values(ascending=False).apply(lambda x: round(x,1)).iloc[:limit]
+    if low: return data_df.sort_values(ascending=True).apply(lambda x: round(x,1)).iloc[:limit]
     else: return data_df.apply(lambda x: round(x,3))
 
 def get_strikes_on_bowler(player,limit=10, top=True,low=False):
@@ -101,8 +101,8 @@ def get_strikes_on_bowler(player,limit=10, top=True,low=False):
     balls=bdf.groupby('bowler')['ball'].count()
     score = bdf.groupby('bowler')['batsman_runs'].sum()
     data_df = ((score/balls)*100)
-    if top: return data_df.sort_values(ascending=False).apply(lambda x: round(x,3)).iloc[:limit]
-    if low: return data_df.sort_values(ascending=True).apply(lambda x: round(x,3)).iloc[:limit]
+    if top: return data_df.sort_values(ascending=False).apply(lambda x: round(x,1)).iloc[:limit]
+    if low: return data_df.sort_values(ascending=True).apply(lambda x: round(x,1)).iloc[:limit]
     else: return data_df.apply(lambda x: round(x,3))
 
 
